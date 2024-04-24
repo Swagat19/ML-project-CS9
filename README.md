@@ -1,3 +1,3 @@
 # ML-project-CS9
 
-For logistic just change the path of the files before running 
+Individual Readme is given regarding all models in their respective folder
