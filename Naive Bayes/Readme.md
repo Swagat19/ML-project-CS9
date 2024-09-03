@@ -1,10 +1,30 @@
+---
 # Naive Bayes Model
+This repository contains Jupyter notebooks for implementing a Naive Bayes model from scratch for classification tasks. The repository includes two main notebooks: `NaiveBayes_EDA.ipynb` for exploratory data analysis (EDA) and data preprocessing, and `NaiveBayes_scratch.ipynb` for implementing and evaluating the Naive Bayes model.
 
-This repository contains Jupyter notebooks for implementing a Naive Bayes model from scratch for classification tasks. This repository contains two Jupyter notebooks: `NaiveBayes_EDA.ipynb` and `NaiveBayes_scratch.ipynb`.
+## Naive Bayes Overview
+
+The Naive Bayes model is a family of probabilistic classifiers based on Bayes' Theorem. It is primarily used for classification tasks, particularly in applications such as text classification, spam detection, sentiment analysis, and document categorization. The "naive" part of the name refers to the model's assumption that the features are independent of each other, which simplifies the computation. Despite this assumption, Naive Bayes performs surprisingly well in many real-world situations.
+
+### How It Works
+
+Naive Bayes classifiers work by estimating the likelihood of each class given the feature values and then applying Bayes' Theorem to compute the posterior probabilities. The model selects the class with the highest posterior probability as the predicted output. Naive Bayes is computationally efficient and works well with large datasets.
+
+Key steps involved in Naive Bayes classification:
+1. **Training**: Calculate the prior probabilities of each class and the conditional probabilities of each feature given the class.
+2. **Prediction**: Use the prior and conditional probabilities to compute the posterior probability for each class given the input features and predict the class with the highest posterior probability.
+3. **Assumptions**: The features are conditionally independent, and each feature contributes equally to the outcome.
+
+## Repository Contents
+
+This repository includes two main notebooks for building and evaluating the Naive Bayes model from scratch:
+
+1. **`NaiveBayes_EDA.ipynb`**: This notebook covers the exploratory data analysis (EDA), data preprocessing, and encoding steps needed to prepare the dataset for the Naive Bayes model.
+2. **`NaiveBayes_scratch.ipynb`**: This notebook contains the implementation of the Naive Bayes model from scratch, along with a comparison of performance between the custom implementation and an implementation using the `scikit-learn` library.
 
 ## Installation
 
-Ensure you have the necessary libraries installed. You can install them using pip:
+Ensure you have the necessary libraries installed. You can install them using the following command:
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
@@ -12,44 +32,61 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 
 ## Usage
 
-Download the zip file of the repository or clone the repository:
+You can download the zip file of the repository or clone the repository using the following command:
+
 ```bash
 git clone https://github.com/Swagat19/ML-project-CS9.git
 ```
 
-## 1. NaiveBayes_EDA.ipynb
+### 1. NaiveBayes_EDA.ipynb
 
-- This notebook contains the exploratory data analysis (EDA), preprocessing, and encoding steps for the Naive Bayes model.
-- To run this notebook, ensure you have the necessary libraries installed. You can install them using pip:
-  ```
-  pip install pandas numpy matplotlib seaborn
-  ```
-- You can change the input data by uncommenting the appropriate line in the notebook:
-  ```
+- This notebook includes exploratory data analysis (EDA), data preprocessing, and encoding of categorical variables to prepare the dataset for Naive Bayes classification.
+- To run this notebook, ensure you have the necessary libraries installed as mentioned above.
+- The dataset can be changed by uncommenting the appropriate line in the notebook:
+  ```python
   data = pd.read_csv('CSV_Files/SWAGAT_INPUT_income_dataset_balanced.csv')
   # data = pd.read_csv('CSV_Files/InputData.csv')
   # data = pd.read_csv('CSV_Files/BalancedInputData.csv')
   ```
-- Run the notebook to perform EDA and prepare the data for the Naive Bayes model.
+- Run this notebook to explore the dataset and prepare it for model training.
 
-## 2. NaiveBayes_scratch.ipynb
+### 2. NaiveBayes_scratch.ipynb
 
-- This notebook contains the implementation of the Naive Bayes model from scratch, as well as running the model using an external library and our implementation.
-- Before running this notebook, ensure you have the necessary libraries installed. You can install them using pip:
-  ```
-  pip install scikit-learn
-  ```
-- Run the notebook after running the EDA notebook. The data processed in the EDA notebook will be used for model training and evaluation.
+- This notebook contains the full implementation of the Naive Bayes model from scratch, along with a comparison with the `scikit-learn` implementation of Naive Bayes.
+- Before running this notebook, ensure you have completed the EDA and preprocessing steps in `NaiveBayes_EDA.ipynb`.
+- Run this notebook to train the Naive Bayes model and evaluate its performance on the processed dataset.
 
 ## Running the Notebooks
 
-- It is recommended to run the two files in Jupyter Notebook or Visual Studio Code.
-- Run the EDA notebook (`NaiveBayes_EDA.ipynb`) first to perform preprocessing and encoding.
-- Once the EDA notebook has been run, you can run the `NaiveBayes_scratch.ipynb` notebook to implement the Naive Bayes model and evaluate its performance.
-- You can run the complete notebook in one go or step through it cell by cell.
+- It is recommended to run the notebooks in Jupyter Notebook, JupyterLab, or Visual Studio Code.
+- Follow this sequence for execution:
+  1. Run the `NaiveBayes_EDA.ipynb` notebook to perform data preprocessing and encoding.
+  2. Once the EDA notebook has been executed, proceed to the `NaiveBayes_scratch.ipynb` notebook to implement the Naive Bayes model and evaluate its performance.
+- You can execute the entire notebook at once or step through the cells interactively.
 
-## Note
+## Notes
 
-- Ensure that the input data file path in both notebooks (`NaiveBayes_EDA.ipynb` and `NaiveBayes_scratch.ipynb`) is correctly set to the location of your dataset.
-- The notebook assumes that the dataset has been preprocessed and encoded as per the EDA notebook's output. If you make changes to the preprocessing or encoding steps, you may need to modify the `NaiveBayes_scratch.ipynb` notebook accordingly.
+- Ensure that the dataset paths in both notebooks (`NaiveBayes_EDA.ipynb` and `NaiveBayes_scratch.ipynb`) are correctly set according to your environment.
+- The notebook assumes that the dataset has been preprocessed and encoded as per the EDA notebook's output. If you modify the preprocessing or encoding steps, you may need to adjust the `NaiveBayes_scratch.ipynb` notebook accordingly.
 
+## Applications of Naive Bayes
+
+Naive Bayes is particularly useful in the following areas:
+- **Text Classification**: Commonly used in spam detection, sentiment analysis, and document classification.
+- **Medical Diagnosis**: Helps in predicting the probability of diseases based on symptoms.
+- **Recommendation Systems**: Predicts user preferences based on past data.
+- **Real-time Predictions**: Due to its fast performance, it is ideal for making real-time predictions in large-scale applications.
+
+### Advantages
+- **Simplicity**: Easy to implement and interpret.
+- **Scalability**: Handles large datasets efficiently.
+- **Speed**: Fast in both training and prediction phases.
+- **Works well with categorical data**: Especially effective for text classification problems.
+
+### Limitations
+- **Independence Assumption**: The assumption that all features are independent may not hold in all cases, leading to suboptimal performance in some tasks.
+- **Zero Frequency**: If a category in a feature is not present in the training data, the model assigns it a zero probability, which may affect predictions. This can be mitigated using techniques like Laplace smoothing.
+
+## Conclusion
+
+This repository provides a hands-on approach to implementing the Naive Bayes model from scratch, covering the entire workflow from data exploration and preprocessing to model implementation and evaluation. The Naive Bayes classifier, despite its simplicity, is a powerful and widely used algorithm for a variety of classification tasks.
