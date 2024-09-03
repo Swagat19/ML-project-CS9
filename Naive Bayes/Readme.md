@@ -15,12 +15,6 @@ Key steps involved in Naive Bayes classification:
 2. **Prediction**: Use the prior and conditional probabilities to compute the posterior probability for each class given the input features and predict the class with the highest posterior probability.
 3. **Assumptions**: The features are conditionally independent, and each feature contributes equally to the outcome.
 
-### Laplace Smoothing
-
-In cases where a feature category does not appear in the training data for a particular class, the probability assigned to that category can be zero, which can negatively impact predictions. To address this, **Laplace smoothing** is applied.
-
-
-
 The formula for Bayes' Theorem is:
 
 **P(C|X) = [P(X|C) * P(C)] / P(X)**
