@@ -12,15 +12,15 @@ Loan approval prediction is a critical task in the financial sector, helping ban
 
 1. **Naive Bayes Classifier**
    - A probabilistic classifier based on Bayes' Theorem, suitable for large datasets and scenarios where feature independence is assumed.
-   - [Explore the Naive Bayes implementation here](./NaiveBayes).
+   - [Explore the Naive Bayes implementation here](./Naive%20Bayes).
 
 2. **Logistic Regression**
    - A statistical model commonly used for binary classification tasks, ideal for problems where the outcome is categorical.
-   - [Explore the Logistic Regression implementation here](./LogisticRegression).
+   - [Explore the Logistic Regression implementation here](./Logistic%20Regression).
 
 3. **Random Forest**
    - An ensemble learning method that constructs multiple decision trees and merges them to achieve better predictive performance.
-   - [Explore the Random Forest implementation here](./RandomForest).
+   - [Explore the Random Forest implementation here](./Random%20Forest).
 
 ## Getting Started
 
