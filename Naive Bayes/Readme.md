@@ -15,6 +15,43 @@ Key steps involved in Naive Bayes classification:
 2. **Prediction**: Use the prior and conditional probabilities to compute the posterior probability for each class given the input features and predict the class with the highest posterior probability.
 3. **Assumptions**: The features are conditionally independent, and each feature contributes equally to the outcome.
 
+### Laplace Smoothing
+
+In cases where a feature category does not appear in the training data for a particular class, the probability assigned to that category can be zero, which can negatively impact predictions. To address this, **Laplace smoothing** is applied.
+
+
+
+The formula for Bayes' Theorem is:
+
+**P(C|X) = [P(X|C) * P(C)] / P(X)**
+
+Where:
+- **P(C|X)** is the posterior probability of class **C** given the feature set **X**.
+- **P(X|C)** is the likelihood of the feature set **X** given class **C**.
+- **P(C)** is the prior probability of class **C**.
+- **P(X)** is the marginal probability of the feature set **X**.
+
+Naive Bayes assumes that the features are conditionally independent, which simplifies the likelihood calculation as:
+
+**P(X|C) = P(x1|C) * P(x2|C) * ... * P(xn|C)**
+
+Where **x1, x2, ..., xn** are the individual features.
+
+### Laplace Smoothing
+
+In cases where a feature category does not appear in the training data for a particular class, the probability assigned to that category can be zero, which can negatively impact predictions. To address this, **Laplace smoothing** is applied.
+
+The formula for Laplace smoothing is:
+
+**P(xi|C) = (count(xi in C) + 1) / (count(C) + |X|)**
+
+Where:
+- **count(xi in C)** is the frequency of feature **xi** in class **C**.
+- **count(C)** is the total number of instances in class **C**.
+- **|X|** is the total number of unique feature values (categories).
+
+Laplace smoothing ensures that every feature has a non-zero probability, preventing zero-frequency problems in the model.
+
 ## Repository Contents
 
 This repository includes two main notebooks for building and evaluating the Naive Bayes model from scratch:
